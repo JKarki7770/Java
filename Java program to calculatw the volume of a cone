@@ -1,0 +1,62 @@
+//Janak Karki
+
+import java.util.Scanner;
+
+public class NumericTypes {
+    public static void main (String [] args) {
+        // TASK #2 Create a Scanner object
+        Scanner scanner = new Scanner(System.in);
+
+        // Identifier declarations
+        final int NUMBER = 2;          // Number of scores
+        final int SCORE1 = 98;         // First test score
+        final int SCORE2 = 93;         // Second test score
+        final int BOILING_IN_C = 100;  // Boiling temperature
+        int cToF;                      // Temperature Fahrenheit
+        double average;                // Arithmetic average
+        String output;                 // Line of output
+
+        // Corrected average calculation
+        average = (double)(SCORE1 + SCORE2) / NUMBER;
+        output = SCORE1 + " and " + SCORE2 +
+                 " have an average of " + average;
+        System.out.println(output);
+
+        // Corrected temperature conversion
+        cToF = (int)(9.0 / 5 * BOILING_IN_C + 32);
+        output = BOILING_IN_C + " in Celcius is " +
+                 cToF + " in Fahrenheit.";
+        System.out.println(output);
+        System.out.println();      // To leave a blank line
+
+        // TASK #2 - Read user's first and last name
+        System.out.print("Enter your first name: ");
+        String firstName = scanner.nextLine();
+        System.out.print("Enter your last name: ");
+        String lastName = scanner.nextLine();
+        String fullName = firstName + " " + lastName;
+        System.out.println("Full Name: " + fullName);
+
+        System.out.println();      // To leave a blank line
+
+        // TASK #3 - Work with Strings
+        char firstInitial = firstName.charAt(0);
+        char lastInitial = lastName.charAt(0);
+        System.out.println("Initials: " + firstInitial + lastInitial);
+        fullName = fullName.toUpperCase();
+        System.out.println("Full Name in Uppercase: " + fullName + "\nLength: " + fullName.length());
+
+        System.out.println();      // To leave a blank line
+
+        // TASK #4 - Use Predefined Math Functions
+        System.out.print("Enter the diameter of the cone: ");
+        double diameter = scanner.nextDouble();
+        double radius = diameter / 2;
+        System.out.print("Enter the height of the cone: ");
+        double height = scanner.nextDouble();
+        double volume = (1.0/3) * Math.PI * Math.pow(radius, 2) * height;
+        System.out.println("Volume of the cone: " + volume);
+
+        scanner.close();
+    }
+}
